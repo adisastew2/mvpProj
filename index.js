@@ -4,8 +4,6 @@ const MongoClient = require('mongodb').MongoClient;
 const mongo = require('mongodb');
 const app = express();
 
-
-
 var db;
 
 MongoClient.connect('mongodb://localhost:27017/Adisadb', (err, database) => {
@@ -19,7 +17,7 @@ MongoClient.connect('mongodb://localhost:27017/Adisadb', (err, database) => {
 });
 
 // serve static assets
-// app.use('/client', express.static(__dirname + '/client'));
+app.use('/client', express.static(__dirname + '/client'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
